@@ -3,6 +3,8 @@ class Gch < Formula
   homepage "https://github.com/jtprogru/gch"
   version "0.12.3"
 
+  deprecate! date: "2026-05-06", because: "is no longer needed and will not receive further updates"
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/jtprogru/gch/releases/download/0.12.3/gch_Darwin_arm64.tar.gz"
