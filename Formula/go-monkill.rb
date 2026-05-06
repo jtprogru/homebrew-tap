@@ -5,13 +5,13 @@
 class GoMonkill < Formula
   desc "Run a command after a process with a given PID terminates"
   homepage "https://github.com/jtprogru/go-monkill"
-  version "0.6.0"
+  version "0.7.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jtprogru/go-monkill/releases/download/v0.6.0/go-monkill_Darwin_x86_64.tar.gz"
-      sha256 "e7388e18706cca95cc738effa1243de23f28647dfe006b37e5251ba176cd9f12"
+      url "https://github.com/jtprogru/go-monkill/releases/download/v0.7.0/go-monkill_Darwin_x86_64.tar.gz"
+      sha256 "e05d980186fe7c7bef1dc1de233be06d6882f6f72c9af84eb59a892736949609"
 
       define_method(:install) do
         bin.install "go-monkill"
@@ -21,8 +21,8 @@ class GoMonkill < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jtprogru/go-monkill/releases/download/v0.6.0/go-monkill_Darwin_arm64.tar.gz"
-      sha256 "8e35911c78bb0ffd8dabcaf30cc5b24094363bd9840d458e3397879cd46e0b36"
+      url "https://github.com/jtprogru/go-monkill/releases/download/v0.7.0/go-monkill_Darwin_arm64.tar.gz"
+      sha256 "c76c0bb83b234a566f8468ee6732cdcfa570ebc647080a0d52c5a0dfecde0dcb"
 
       define_method(:install) do
         bin.install "go-monkill"
@@ -35,8 +35,8 @@ class GoMonkill < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/go-monkill/releases/download/v0.6.0/go-monkill_Linux_x86_64.tar.gz"
-      sha256 "eb7aaf4fa8054cbbe852f467a99bc44a55f30834c02d49421a7abad92f71831a"
+      url "https://github.com/jtprogru/go-monkill/releases/download/v0.7.0/go-monkill_Linux_x86_64.tar.gz"
+      sha256 "45c238a78ba1925e3af4824f8f6b8a5314e2328e3a582e9566dd190b110b4665"
       define_method(:install) do
         bin.install "go-monkill"
         bash_completion.install "completions/go-monkill.bash" => "go-monkill"
@@ -45,8 +45,8 @@ class GoMonkill < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/go-monkill/releases/download/v0.6.0/go-monkill_Linux_arm64.tar.gz"
-      sha256 "21e983f646b4fd5884e7d99cc706ffb3cddbf117c737ff57806b404c5c26643e"
+      url "https://github.com/jtprogru/go-monkill/releases/download/v0.7.0/go-monkill_Linux_arm64.tar.gz"
+      sha256 "79fd1ed41081d496ef3eabf9127b4a1244d6f4fe3f92edf48d5a939e9087ff2b"
       define_method(:install) do
         bin.install "go-monkill"
         bash_completion.install "completions/go-monkill.bash" => "go-monkill"
