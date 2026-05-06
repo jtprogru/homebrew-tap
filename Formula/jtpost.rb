@@ -5,21 +5,21 @@
 class Jtpost < Formula
   desc "CLI/web-сервис для управления публикациями в Telegram-канал."
   homepage "https://github.com/jtprogru/jtpost"
-  version "0.6.0"
+  version "0.7.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jtprogru/jtpost/releases/download/v0.6.0/jtpost_Darwin_x86_64.tar.gz"
-      sha256 "3dd3be9401798fbc894901e9edfe5008e9c383547f2cdabb7e1a8858663f72c0"
+      url "https://github.com/jtprogru/jtpost/releases/download/v0.7.0/jtpost_Darwin_x86_64.tar.gz"
+      sha256 "3c446131c4442ebcc671a0f100b2b7bb77fbdcecd3400cacbaf3e91ac1f01d46"
 
       define_method(:install) do
         bin.install "jtpost"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jtprogru/jtpost/releases/download/v0.6.0/jtpost_Darwin_arm64.tar.gz"
-      sha256 "79e402d19dd1ee6ebcca851356046d3d95b5f079fc92e0214d2c6434f94474b8"
+      url "https://github.com/jtprogru/jtpost/releases/download/v0.7.0/jtpost_Darwin_arm64.tar.gz"
+      sha256 "6609f170cadfc86428576ce330c094b771c281a4f31a0dc6e10b008bab66c9e4"
 
       define_method(:install) do
         bin.install "jtpost"
@@ -29,15 +29,15 @@ class Jtpost < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/jtpost/releases/download/v0.6.0/jtpost_Linux_x86_64.tar.gz"
-      sha256 "4881d190605f3c139856b7e477fd3098ff68b72aaff120c1356d47cee9022151"
+      url "https://github.com/jtprogru/jtpost/releases/download/v0.7.0/jtpost_Linux_x86_64.tar.gz"
+      sha256 "9bd265416d987191f959a033d70e670bcb8c8d821cdf8cd64bfc6945ebaf70dd"
       define_method(:install) do
         bin.install "jtpost"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/jtpost/releases/download/v0.6.0/jtpost_Linux_arm64.tar.gz"
-      sha256 "f2aa0369c573f00a6043a6c9deeacb5ee9db2c7a7304367ed66338398975f122"
+      url "https://github.com/jtprogru/jtpost/releases/download/v0.7.0/jtpost_Linux_arm64.tar.gz"
+      sha256 "ae99e77f17b61fce6a58f9c5421bace438df5f1322870e063e07f061c99f1fea"
       define_method(:install) do
         bin.install "jtpost"
       end
