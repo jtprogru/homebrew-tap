@@ -4,22 +4,22 @@ cask "indexnow" do
 
   on_macos do
     on_intel do
-      sha256 "f1f78cef0e32f1bf9a8b12212f1ffdf8f95c1dbbe189e434221281d7563b9029"
+      sha256 "e75c7a5d3a151588f3d04e24d7b567c1a68627338ff4537d83dcc1f38b1672e2"
       url "https://github.com/jtprogru/indexnow/releases/download/v#{version}/indexnow_Darwin_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "024e32612d817aac39ae647602b0e210bccd82966d8aadf0cc53ddca1812aa2c"
+      sha256 "2e1e834b9f578c7819c7743e4f73fc1376a4fad9e3a06a32da7c8a89419c0a03"
       url "https://github.com/jtprogru/indexnow/releases/download/v#{version}/indexnow_Darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "ed3dd882c641adb133fb30b90bda18698998e60735e92354e8da9b784f2d6dbc"
+      sha256 "2938853313985b221d61317309a2cf96a0ce76840c599eb2967978620e981ce2"
       url "https://github.com/jtprogru/indexnow/releases/download/v#{version}/indexnow_Linux_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "ecf7cea2766e0ea21a1483277e6230ac23bed604c8f71bf9aec14fa985ee5d6c"
+      sha256 "989dfb6ef700fd0f0d98a1cf1af25bfa30952b52d2a55a6094f5689cbf5228ee"
       url "https://github.com/jtprogru/indexnow/releases/download/v#{version}/indexnow_Linux_arm64.tar.gz"
     end
   end
