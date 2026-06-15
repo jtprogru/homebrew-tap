@@ -4,22 +4,22 @@ cask "jtsekret" do
 
   on_macos do
     on_intel do
-      sha256 "88b55b1479fa5e337382506fcc5249c1d93acebc203125a0443a590e900bd2fc"
+      sha256 "cbb307a1a373863b5d327056e601375528317e3a8b0c5ec455c391313563f759"
       url "https://github.com/jtprogru/jtsekret/releases/download/v#{version}/jtsekret_Darwin_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "4b25db6779378281ad66a192ec93cb9e0d48d15659ce81305b4932a9e50ef579"
+      sha256 "932790073ad12fd0cb9be1216fcf6a710cd09736c43d2658910ec25b457522d8"
       url "https://github.com/jtprogru/jtsekret/releases/download/v#{version}/jtsekret_Darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "3df96e3265c506ac4fd221b95fba092c3f9710711076d91ae043bd500634f79c"
+      sha256 "9e8b360f3a87a7923a7275e6e1e0920fb7791645c0d85cb449fdc523d4f161c5"
       url "https://github.com/jtprogru/jtsekret/releases/download/v#{version}/jtsekret_Linux_x86_64.tar.gz"
     end
     on_arm do
-      sha256 "1ac2624d1abb1482ead5eee2208ca97549833dc7d9b3b8c1849aa275ca4c1465"
+      sha256 "ebe653a1457e18bb1bce44817f4b7df7d37483aa6d7d514dab54ca94db295c24"
       url "https://github.com/jtprogru/jtsekret/releases/download/v#{version}/jtsekret_Linux_arm64.tar.gz"
     end
   end
