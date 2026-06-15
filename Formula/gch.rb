@@ -4,6 +4,7 @@ class Gch < Formula
   version "0.12.3"
 
   deprecate! date: "2026-05-06", because: "is no longer needed and will not receive further updates"
+  disable! date: "2026-06-15", because: :repo_archived
 
   on_macos do
     if Hardware::CPU.arm?
