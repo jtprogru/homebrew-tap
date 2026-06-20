@@ -1,23 +1,23 @@
 class Asphyxia < Formula
   desc "A fast and efficient network scanner written in Rust"
   homepage "https://github.com/jtprogru/asphyxia"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.3.0/asphyxia-aarch64-apple-darwin.zip"
-      sha256 "c54e46b6a43643e58e68b25da232bf8eff58e67460aea2bfea56631b8b83019b"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.4.0/asphyxia-aarch64-apple-darwin.zip"
+      sha256 "372491d56190b5cb25e90771f2aab3608c703725352f6abcbbb83ed6c661d673"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.3.0/asphyxia-x86_64-unknown-linux-gnu.zip"
-      sha256 "63f47bd82d65c59cc81e863399332f3b5777edc0a1aa76ff2d740aa8a5e5b377"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.4.0/asphyxia-x86_64-unknown-linux-gnu.zip"
+      sha256 "9ba5ef1aec12a593434bbfae33b9a82cd65bd3a17f7bd106b69f3f539bfb6b5f"
     end
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.3.0/asphyxia-aarch64-unknown-linux-gnu.zip"
-      sha256 "abc88b6ce1ed007e471c32dbc56b6e622ad6bf88e5e98bb2c3a7cfb0be1a030b"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.4.0/asphyxia-aarch64-unknown-linux-gnu.zip"
+      sha256 "e63978afc6b26669c25467bf207020abb5d7e08165c9b35f6a22d5bbf6eb295b"
     end
   end
 
