@@ -6,26 +6,26 @@
 class Rspassimpt < Formula
   desc "Import passwords from a macOS Passwords CSV export into pass"
   homepage "https://github.com/jtprogru/rspassimpt"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.1.0/rspassimpt-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "240bc5de1c5ffb862975aed335a895dd8ba8004230a03bc47c14ca8c22f8b460"
+      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.2.0/rspassimpt-v0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "ad26879d036778e9c90a8d43279666c2bcdb598096c7ea00337ce0c4738d4d80"
     else
-      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.1.0/rspassimpt-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "d86f40d6c1a6478451fd96dca0b55e8b49847dc560a3cc44e760b662f5a9f59c"
+      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.2.0/rspassimpt-v0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "eec73eeb1fa187b78bbafa640d3ad80baf1a15b1236f2245f2f23e2bfd8d217b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.1.0/rspassimpt-v0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "faffe88b1b67f4aefb3fa05edc7afd5da7750bfefd85e71d6be1f418754414fe"
+      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.2.0/rspassimpt-v0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "0cbeb68ac8136163b950f5802577a0e2888134c7923d98c5776c8fc00f693805"
     else
-      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.1.0/rspassimpt-v0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b094d9c170b30d9376561dbc92efff2e4440e431389973c3601f11be58b934e4"
+      url "https://github.com/jtprogru/rspassimpt/releases/download/v0.2.0/rspassimpt-v0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3e175149987bcc19250cd757f444d1ef2313baaa6a5d88ed653d5c8ab63297c4"
     end
   end
 
