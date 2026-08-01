@@ -6,26 +6,26 @@
 class Jlic < Formula
   desc "Generate LICENSE files for open source projects"
   homepage "https://github.com/jtprogru/jlic"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jtprogru/jlic/releases/download/v0.2.0/jlic-v0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "9e83e4ac960550148bfedd8beee0cd84540d0a24b24cadc4fc92314d55c8c10b"
+      url "https://github.com/jtprogru/jlic/releases/download/v0.2.1/jlic-v0.2.1-aarch64-apple-darwin.tar.gz"
+      sha256 "9c0ea93ce58958c7f4126f2474a1eedd32e15f17c56cbb07eecd97d73e63e7f1"
     else
-      url "https://github.com/jtprogru/jlic/releases/download/v0.2.0/jlic-v0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "c499d56db908dae80a3e5d7ca9d5fb6b871fc9f026e64fb7d152563ba7859611"
+      url "https://github.com/jtprogru/jlic/releases/download/v0.2.1/jlic-v0.2.1-x86_64-apple-darwin.tar.gz"
+      sha256 "4faefd40372186191cad672ca8eaa83a16afd5c7f3e82e3740e006ab4e8dbc07"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/jlic/releases/download/v0.2.0/jlic-v0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "44e550f8607f7887643ec3761710203a5e16ce7299f488b033eaf693b85e678c"
+      url "https://github.com/jtprogru/jlic/releases/download/v0.2.1/jlic-v0.2.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "105b3b694cab2dcb5cf7489ef20a6dfbcee2a4e2ad3aa13ccc6f35746bc959ad"
     else
-      url "https://github.com/jtprogru/jlic/releases/download/v0.2.0/jlic-v0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "75b6d980bb24815cfcd0ef4ba026aa688e0c2fdbd24c31cdca529aa39e03ab6e"
+      url "https://github.com/jtprogru/jlic/releases/download/v0.2.1/jlic-v0.2.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "04acf86199dbd5680f6adfbcd034fff9ecf071ae1bddadb8cbd9401a3264737b"
     end
   end
 
