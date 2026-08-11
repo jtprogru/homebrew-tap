@@ -1,28 +1,28 @@
 class Notiflow < Formula
   desc "Telegram notifier for CI and the terminal"
   homepage "https://jtprogru.github.io/notiflow/"
-  version "2.0.0-rc.1"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0-rc.1/notiflow-aarch64-apple-darwin.tar.gz"
-      sha256 "61f55586aa68e74724dba2f226e328b1621b646f5f7d58a0a0e2ed35d4b38db3"
+      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0/notiflow-aarch64-apple-darwin.tar.gz"
+      sha256 "9e10e28737184d6b26b0ba09d74f232a4c197c14be95912120147b5d6a526e0d"
     end
     on_intel do
-      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0-rc.1/notiflow-x86_64-apple-darwin.tar.gz"
-      sha256 "0a2a2e61ab302c4b475fc93e42bea0146aca10a758989dde17fea43bbf7d8acf"
+      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0/notiflow-x86_64-apple-darwin.tar.gz"
+      sha256 "9c7608f80f3ce9681b63be00b2a9f73d9ed09b5b4f38e9e4cf67ad7d3a4120c5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0-rc.1/notiflow-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d578f6cb225d88338270ff2ed9f00b408ea8843d97ede9d15c6ca4de576c926e"
+      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0/notiflow-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "3757549f0337cfeb81b276837daad6bf7ba7efa8b82351c3e583d1a2ea7d3473"
     end
     on_arm do
-      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0-rc.1/notiflow-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a7f5850b3fd73a78a6ab9c661827f7fba00090b19127c102098cec32676d4f0e"
+      url "https://github.com/jtprogru/notiflow/releases/download/v2.0.0/notiflow-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "5821733801efa370c355adb702e78598c0f96477c59521c7b192410b16e546fe"
     end
   end
 
