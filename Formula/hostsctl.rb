@@ -6,26 +6,26 @@
 class Hostsctl < Formula
   desc "Manage /etc/hosts from a YAML config: groups, zone files, blocklists, backups"
   homepage "https://jtprogru.github.io/hostsctl/"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jtprogru/hostsctl/releases/download/v0.1.0/hostsctl-aarch64-apple-darwin.tar.gz"
-      sha256 "f5a832d70ec9607adad8f963a95f5e7d2df4cb8e5d25a5b96cc4cc2bb89fff6b"
+      url "https://github.com/jtprogru/hostsctl/releases/download/v0.2.0/hostsctl-aarch64-apple-darwin.tar.gz"
+      sha256 "e77c997dc6850205240fbb35dbc7e68b2cf566c63d1f58ff64fd9e957a0cd0ee"
     else
-      url "https://github.com/jtprogru/hostsctl/releases/download/v0.1.0/hostsctl-x86_64-apple-darwin.tar.gz"
-      sha256 "3f1863a9294611de207d0f8c9dfd9afeca37fd075ae5f951aa6baf496370af9f"
+      url "https://github.com/jtprogru/hostsctl/releases/download/v0.2.0/hostsctl-x86_64-apple-darwin.tar.gz"
+      sha256 "050ec5fb6fcc128cfe6ec382a43fe39cbb7d2089889e3609807eadcf36df4f36"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jtprogru/hostsctl/releases/download/v0.1.0/hostsctl-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "63c4c680cf5265f77c9f035da7c9e540e29cb092596e881a6b83df528b03e245"
+      url "https://github.com/jtprogru/hostsctl/releases/download/v0.2.0/hostsctl-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "49bf678bea0819fa2e699fcbd5e3bb2bf07a80a3f0ed1c9efe46e459d9c7d8c2"
     else
-      url "https://github.com/jtprogru/hostsctl/releases/download/v0.1.0/hostsctl-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a6071671b37aa39e8b9efad549187ac6ec87c7da3c82aa1690bac36c8e9f9c50"
+      url "https://github.com/jtprogru/hostsctl/releases/download/v0.2.0/hostsctl-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5d64a6811a09584c1cc15497ed08eb4e26ed0a01256ff8548ef2cb14f0b09b75"
     end
   end
 
