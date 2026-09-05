@@ -48,5 +48,14 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      # Прогоняет brew style и brew audit по всем формулам и каскам тапа.
-      - run: brew test-bot --only-tap-syntax
+      - name: brew style
+        run: brew style jtprogru/tap
+
+      - name: brew audit
+        run: brew audit --tap=jtprogru/tap
+
+      # brew test-bot --only-tap-syntax дополнительно гоняет
+      # brew readall --os=all --arch=all. Включить, когда asphyxia начнёт
+      # публиковать сборку под x86_64-apple-darwin: сейчас readall падает,
+      # потому что для macOS на Intel у формулы нет ни одного URL.
+      # См. jtprogru/asphyxia.

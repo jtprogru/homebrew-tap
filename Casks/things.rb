@@ -21,6 +21,9 @@ cask "things" do
     skip "Auto-generated on release."
   end
 
+  # thingscli ходит в Things 3 через AppleScript, портируемого фолбэка нет.
+  depends_on macos: :big_sur
+
   binary "things"
 
   postflight_steps do
