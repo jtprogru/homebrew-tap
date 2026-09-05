@@ -6,8 +6,10 @@
 class Rspassimpt < Formula
   desc "Import passwords from a macOS Passwords CSV export into pass"
   homepage "https://github.com/jtprogru/rspassimpt"
-  version "0.2.0"
   license "MIT"
+
+  depends_on "gnupg"
+  depends_on "pass"
 
   on_macos do
     if Hardware::CPU.arm?
@@ -28,9 +30,6 @@ class Rspassimpt < Formula
       sha256 "3e175149987bcc19250cd757f444d1ef2313baaa6a5d88ed653d5c8ab63297c4"
     end
   end
-
-  depends_on "gnupg"
-  depends_on "pass"
 
   def install
     bin.install "rspassimpt"

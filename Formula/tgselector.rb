@@ -6,7 +6,6 @@
 class Tgselector < Formula
   desc "Extract and process posts from a Telegram JSON export by id"
   homepage "https://github.com/jtprogru/tgselector"
-  version "0.1.0"
   license "MIT"
 
   on_macos do
@@ -32,9 +31,7 @@ class Tgselector < Formula
   def install
     bin.install "tgselector"
     # Generate shell completions from the binary itself.
-    (bash_completion/"tgselector").write Utils.safe_popen_read(bin/"tgselector", "--completions", "bash")
-    (zsh_completion/"_tgselector").write Utils.safe_popen_read(bin/"tgselector", "--completions", "zsh")
-    (fish_completion/"tgselector.fish").write Utils.safe_popen_read(bin/"tgselector", "--completions", "fish")
+    generate_completions_from_executable(bin/"tgselector", "--completions")
   end
 
   test do
