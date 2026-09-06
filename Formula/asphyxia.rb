@@ -1,7 +1,6 @@
 class Asphyxia < Formula
-  desc "A fast and efficient network scanner written in Rust"
+  desc "Fast and efficient network scanner written in Rust"
   homepage "https://github.com/jtprogru/asphyxia"
-  version "0.9.1"
 
   on_macos do
     on_intel do
