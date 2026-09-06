@@ -1,7 +1,6 @@
 class Notiflow < Formula
   desc "Telegram notifier for CI and the terminal"
   homepage "https://jtprogru.github.io/notiflow/"
-  version "2.0.1"
   license "MIT"
 
   on_macos do
