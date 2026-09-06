@@ -1,25 +1,27 @@
 class Asphyxia < Formula
-  desc "Fast and efficient network scanner written in Rust"
+  desc "A fast and efficient network scanner written in Rust"
   homepage "https://github.com/jtprogru/asphyxia"
+  version "0.9.1"
 
   on_macos do
-    # Апстрим не публикует сборку под x86_64-apple-darwin, только Apple Silicon.
-    depends_on arch: :arm64
-
+    on_intel do
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-x86_64-apple-darwin.zip"
+      sha256 "3b0dab29d64f104ea0bf137d8248a4e27514f2feb33a6f9d90eb433f9925e830"
+    end
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.0/asphyxia-aarch64-apple-darwin.zip"
-      sha256 "0ece438d847e489745e48fa777a9c6b032bb4aa033704b2972cc54ad73713f5c"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-aarch64-apple-darwin.zip"
+      sha256 "af5dcbaadf8fe031857c691c7f4609c1cf8cd6834ac974fbd7a6145b00969082"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.0/asphyxia-x86_64-unknown-linux-gnu.zip"
-      sha256 "393f5a27cefe989d4327a4aa7c6864ac32dd9a90b5b0a0e97fa58f554986d935"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-x86_64-unknown-linux-gnu.zip"
+      sha256 "7ab5bc2b02b9e339e6285433c420c8ae2819923e1e5de8ea211f5d7825e6324a"
     end
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.0/asphyxia-aarch64-unknown-linux-gnu.zip"
-      sha256 "14d6491ebdfe02a46ca0005481e62150766fd70e1e37c5cdd9e9e85b09c7e42c"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-aarch64-unknown-linux-gnu.zip"
+      sha256 "33fc94ccdd811933a7c460d5331d5c5a8d96ee000c9ab0b9f5866b62c017e702"
     end
   end
 
