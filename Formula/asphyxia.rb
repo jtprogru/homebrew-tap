@@ -4,23 +4,23 @@ class Asphyxia < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-x86_64-apple-darwin.zip"
-      sha256 "3b0dab29d64f104ea0bf137d8248a4e27514f2feb33a6f9d90eb433f9925e830"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.10.0/asphyxia-x86_64-apple-darwin.zip"
+      sha256 "ad27a8d140e04e5938a476a5e1799f4d069f20cf45384bbbb545a05d0ce54630"
     end
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-aarch64-apple-darwin.zip"
-      sha256 "af5dcbaadf8fe031857c691c7f4609c1cf8cd6834ac974fbd7a6145b00969082"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.10.0/asphyxia-aarch64-apple-darwin.zip"
+      sha256 "b07378a082b28b060283fb99bcffa62d73617b9dcf2b6b7afdc880934a49f729"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-x86_64-unknown-linux-gnu.zip"
-      sha256 "7ab5bc2b02b9e339e6285433c420c8ae2819923e1e5de8ea211f5d7825e6324a"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.10.0/asphyxia-x86_64-unknown-linux-gnu.zip"
+      sha256 "133d87b887286a9c0e82d528cdbd4a5de04da60d07bce52a1cb9d1b9c7a780ed"
     end
     on_arm do
-      url "https://github.com/jtprogru/asphyxia/releases/download/0.9.1/asphyxia-aarch64-unknown-linux-gnu.zip"
-      sha256 "33fc94ccdd811933a7c460d5331d5c5a8d96ee000c9ab0b9f5866b62c017e702"
+      url "https://github.com/jtprogru/asphyxia/releases/download/0.10.0/asphyxia-aarch64-unknown-linux-gnu.zip"
+      sha256 "6a52035c2dfe0f0110e46160a0fa8361806cc15935e3fd4396e22f9e59b256de"
     end
   end
 
