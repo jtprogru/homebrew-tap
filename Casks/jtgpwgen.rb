@@ -37,5 +37,5 @@ cask "jtgpwgen" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/jtgpwgen"]
   end
 
-  # No zap stanza required
+  zap :not_required
 end

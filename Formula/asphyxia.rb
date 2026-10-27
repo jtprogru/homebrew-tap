@@ -27,4 +27,8 @@ class Asphyxia < Formula
   def install
     bin.install "asphyxia"
   end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/asphyxia --version")
+  end
 end

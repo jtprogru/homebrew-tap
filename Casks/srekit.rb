@@ -37,5 +37,5 @@ cask "srekit" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/srekit"]
   end
 
-  # No zap stanza required
+  zap :not_required
 end

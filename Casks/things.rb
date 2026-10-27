@@ -22,7 +22,7 @@ cask "things" do
   end
 
   # thingscli ходит в Things 3 через AppleScript, портируемого фолбэка нет.
-  depends_on macos: :big_sur
+  depends_on :macos
 
   binary "things"
 
@@ -30,5 +30,5 @@ cask "things" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/things"]
   end
 
-  # No zap stanza required
+  zap :not_required
 end
