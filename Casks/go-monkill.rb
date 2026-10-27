@@ -33,12 +33,12 @@ cask "go-monkill" do
 
   binary "go-monkill"
   bash_completion "completions/go-monkill.bash"
-  fish_completion "completions/go-monkill.fish"
   zsh_completion "completions/go-monkill.zsh"
+  fish_completion "completions/go-monkill.fish"
 
   postflight_steps do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/go-monkill"]
   end
 
-  # No zap stanza required
+  zap :not_required
 end

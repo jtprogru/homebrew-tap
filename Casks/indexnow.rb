@@ -37,5 +37,5 @@ cask "indexnow" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/indexnow"]
   end
 
-  # No zap stanza required
+  zap :not_required
 end
