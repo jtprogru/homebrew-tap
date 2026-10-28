@@ -5,6 +5,9 @@ on:
     branches:
       - main
   pull_request:
+  # Через dispatch style-fix перезапускает workflow на своём коммите:
+  # push с GITHUB_TOKEN новых запусков не создаёт.
+  workflow_dispatch:
 
 permissions: {}
 
@@ -13,7 +16,78 @@ defaults:
     shell: bash -xeuo pipefail {0}
 
 jobs:
+  # Casks перегенерирует goreleaser при каждом релизе, а его шаблон отстаёт
+  # от новых cop'ов brew style. Например, 2.19 пишет
+  # "# No zap stanza required", который запрещает Cask/ZapNotRequired.
+  # Чтобы main не краснел после каждого релиза, этот job прогоняет
+  # brew style --fix по тому, что пришло пушем, и коммитит исправления.
+  # Если он что-то запушил, test-bot в этом запуске пропускается: он
+  # проверит исправленный коммит в запуске, который создаёт dispatch.
+  style-fix:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/homebrew/brew:main # zizmor: ignore[unpinned-images]
+    permissions:
+      actions: write # dispatch этого workflow на коммит с исправлениями
+      contents: write # push коммита с исправлениями в main
+    outputs:
+      pushed: ${{ steps.commit.outputs.pushed }}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@3cdb78d0f62ad29dd32de765782654f4eedea607 # 2026.08.31.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ubuntu-latest-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ubuntu-latest-rubygems-
+
+      # Выходит с ненулевым кодом, пока остаются замечания без автоисправления.
+      # Их покажет test-bot, здесь важно только то, что исправилось.
+      - name: brew style --fix
+        env:
+          TAP: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew style --fix "$TAP" || true
+
+      - name: Commit and push
+        id: commit
+        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -- Casks Formula
+          if git diff --cached --quiet; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git diff --cached --stat
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "style: apply brew style --fix to ${GITHUB_SHA::7}"
+          # Если main уже ушёл вперёд, исправит запуск от более нового пуша.
+          if ! git push origin "HEAD:${GITHUB_REF_NAME}"; then
+            echo "::warning::${GITHUB_REF_NAME} moved past ${GITHUB_SHA::7}, leaving the fix to the newer run"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+          set +x
+          curl --fail-with-body -sS -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/actions/workflows/tests.yml/dispatches" \
+            -d "{\"ref\":\"${GITHUB_REF_NAME}\"}"
+
   test-bot:
+    needs: style-fix
+    # !cancelled() нужен, чтобы test-bot шёл и тогда, когда style-fix
+    # пропущен (pull_request, workflow_dispatch) или упал.
+    if: ${{ !cancelled() && needs.style-fix.outputs.pushed != 'true' }}
     strategy:
       fail-fast: false
       matrix:
